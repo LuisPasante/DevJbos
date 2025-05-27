@@ -39,7 +39,7 @@
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
  
-          <div class="flex justify-between my-5">
+        <div class="flex justify-between my-5">
             <x-link 
             :enlace="route('login')"
             > 
