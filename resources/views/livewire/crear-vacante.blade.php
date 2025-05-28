@@ -7,7 +7,7 @@
              wire:model="titulo" 
              :value="old('titulo')" 
              placeholder="Titulo Vacante"/>
-              <x-input-error :messages="$errors->get('titulo')" class="mt-2" />
+            <x-input-error :messages="$errors->get('titulo')" class="mt-2" />
         </div>
         <div>
             <x-input-label for="salario" :value="__('Salario Mensual')" /> 
@@ -70,10 +70,17 @@
         <div>
             <x-input-label for="imagen" :value="__('Imagen')" />
             <x-text-input id="imagen"
-             class="block mt-1 w-full" 
+             class="block mt-1 w-full" w-80
              type="file" 
-             wire:model="imagen"/> 
-              <x-input-error :messages="$errors->get('imagen')" class="mt-2" /> 
+             wire:model="imagen" 
+             accept="image/*"/> 
+             <div class="my-5">
+                @if($imagen)
+                    Imagen:
+                    <img src="{{$imagen->temporaryUrl()}}"> 
+                @endif
+             </div>
+            <x-input-error :messages="$errors->get('imagen')" class="mt-2" /> 
         </div>
         <x-primary-button>
             Crear Vacante 
