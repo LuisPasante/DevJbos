@@ -31,8 +31,8 @@ class CrearVacante extends Component
     ];
     public function crearVacante(){
         $datos =  $this->validate();
-        //Almacenar Imagen
-        $imagen =$this->imagen->store('public/vacantes');
+        //Almacenar Imagen 
+        $imagen = $this->imagen->store('vacantes', 'public'); 
         $datos['imagen']= str_replace('public/vacantes/','',$imagen);
         //dd($nombre_imagen);
         //Crear Vacante

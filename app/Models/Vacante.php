@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Vacante extends Model
 {
+    protected $casts = [
+        'ultimo_dia' => 'datetime',
+    ];
+
     protected $fillable =[
         'titulo',
         'salario_id',
